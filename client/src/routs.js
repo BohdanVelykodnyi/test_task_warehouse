@@ -1,26 +1,15 @@
 import React from "react";
 import {Switch, Route, Redirect} from "react-router-dom"
-import {Cabinet} from "./components/Cabinet";
-import {AuthPage} from "./components/AuthPage";
+import {AddKey} from "./components/AddKey";
 
-export const UseRouts = isAuth => {
-    if (isAuth) {
+export const UseRouts = () => {
         return(
             <Switch>
-                <Route path={"/cabinet"}>
-                    <Cabinet />
+                <Route path={"/"}>
+                    <AddKey />
                 </Route>
-                <Redirect to={"/cabinet"}/>
+                <Redirect to={"/"}/>
             </Switch>
         )
-    } else{
-        return(
-            <Switch>
-                <Route path={"/auth"}>
-                    <AuthPage />
-                </Route>
-                <Redirect to={"/auth"}/>
-            </Switch>
-        )
-    }
+
 };

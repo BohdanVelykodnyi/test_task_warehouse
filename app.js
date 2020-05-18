@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.json());
-app.use("/api/auth", require("./routes/auth_routs"));
+app.use("/api", require("./routes/keys_routs"));
 
 const PORT = config.get("port") || 5000;
 const DB_URL = config.get('mongoURL');
